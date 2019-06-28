@@ -64,14 +64,14 @@ MEDIA_URL = ''
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 # e.g.  STATIC_ROOT = '/data/home/verbs/student/wech5560/Research/anaforaDevelop/src/main/static'
-STATIC_ROOT = "/home/himanshu/Downloads/anafora/src/main/static"
+# STATIC_ROOT = "/home/himanshu/Downloads/anafora/src/main/static"
 #STATIC_ROOT = '/data/home/verbs/student/wech5560/Research/TemporalPreAnnotation/main/StaticFiles'
 # e.g.  STATIC_URL = '/static/'
 STATIC_URL = '/static/'
 
 #e.g. ROOT_URL = '/~wech5560/anafora'
 # ROOT_URL = "/home/himanshu/Downloads/anafora/"
-ROOT_URL = "/home/himanshu/Downloads/anafora/src/main"
+ROOT_URL = ""
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
