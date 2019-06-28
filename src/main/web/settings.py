@@ -186,7 +186,7 @@ TEST_RUNNER = 'testing.DatabaselessTestRunner'
 
 # Assign the anafora project file directory path
 # e.g.  ANAFORA_PROJECT_FILE_ROOT = "/data/home/verbs/student/wech5560/Research/KnowtatorProcessing/data/anaforaProjectFile/"
-ANAFORA_PROJECT_FILE_ROOT = "/home/himanshu/Downloads/anafora/sample data/sampleanaforaprojectfile/"
+ANAFORA_PROJECT_FILE_ROOT = "/home/himanshu/Downloads/anafora/sample data/jsm/"
 
 # Assign the Digest auth group file location
 # e.g.  GROUP_FILE = '/data/anafora-event/site/anafora-event.group'
