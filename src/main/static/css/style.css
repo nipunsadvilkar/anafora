@@ -1,4 +1,4 @@
-/* @override 
+/* @override
 	http://verbs.colorado.edu/~wech5560/anafora/static/testAnnotate/style.css
 	http://verbs.colorado.edu/~wech5560/anafora/static/style.css
 	http://verbs.colorado.edu/~wech5560/anafora/static/testAnnotate/style.css
@@ -118,7 +118,7 @@ h1 {
 }
 
 #aProjectWrapper div {
-  overflow-y: scroll; 
+  overflow-y: scroll;
   overflow-x: hidden;
   white-space: pre-wrap;
   word-wrap:break-word;
@@ -233,7 +233,7 @@ h1 {
 
   overflow-x: hidden;
   overflow-y: auto;
-  
+
 }
 
 #propertyWrapper .propertyHidden {
@@ -265,7 +265,7 @@ span.jstreeschema {
 
 #aProjectWrapper div span {
   display: inline;
-  z-index:10; 
+  z-index:10;
 }
 
 #aProjectWrapper div span.entity {
@@ -276,7 +276,7 @@ span.jstreeschema {
 
 #aProjectWrapper div span.overlap {
   cursor: pointer;
-  background-color: #cecece; 
+  background-color: #cecece;
   color: black;
   border-style: double;
 }
@@ -302,7 +302,7 @@ span.jstreeschema {
 
 #aProjectWrapper div span.highLight {
   cursor: pointer;
-    
+
 /*HERE, WE NEED TO BE ABLE TO INHERIT THE NATURAL BACKGROUND COLOR.  CAN WE PASS THE COLOR TO ENTITIES USING THE "STYLE" ATTRIBUTE, SO THAT WAY, WHEN UNSPECIFIED,IT SHOULD BE ALLOWED THROUGH?*/
   color: rgba(0,0,0,1.0);
   border: 3px dashed rgb(0, 0, 0);
@@ -386,7 +386,7 @@ span.selectAObj {
 }
 #propertyWrapper .property td {
 	border: 1px solid #999999;
-	
+
 	text-align: right;
 	font-size: 0.8em;
 	width: 300px;
@@ -632,14 +632,14 @@ span.selectAObj {
 	/* Layout */
 	display: block;
 	/* width: 90px; */
-	
+
 	border: 1px solid #e1e1e1;
 
 	/* Typography */
 	font-size: 1em;
 
 	text-decoration: none;
-	
+
 	/* Background & effects */
 	background: #fff;
 	-webkit-transition: background .1s;
@@ -697,7 +697,7 @@ progress {
 }
 
 /* Firefox */
-progress::-moz-progress-bar { 
+progress::-moz-progress-bar {
     background-color: blue;
 }
 
@@ -732,12 +732,12 @@ progress[aria-valuenow]:before  {
 .context-menu-list {
 	min-width: 120px;
 	max-width: 550px;
-	
+	max-height: 400px;
 	display: inline-block;
 	list-style-type: none;
-	
+
 	background: #EEE;
-	
+
 	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 	-ms-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -778,7 +778,7 @@ progress[aria-valuenow]:before  {
     -moz-border-radius: 3px; /* Firefox */
     -webkit-border-radius: 3px;
 }
-		
+
 .context-menu-item:hover {
 	background-color: #dcdcdc;
 	-webkit-user-select: none;
@@ -808,13 +808,13 @@ progress[aria-valuenow]:before  {
 #propertyContextMenu .context-menu-list {
 	min-width: 120px;
 	max-width: 350px;
-	
+
 	display: block;
 	list-style-type: none;
-	
+
 	border: 1px solid #DDD;
 	background: #EEE;
-	
+
 	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 	-ms-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -841,7 +841,7 @@ progress[aria-valuenow]:before  {
 	font-weight: bold;
 	border: none;
 }
-		
+
 #propertyContextMenu .context-menu-item:hover {
 	background-color: #EEE;
 	-webkit-user-select: none;
@@ -875,7 +875,7 @@ progress[aria-valuenow]:before  {
 /* icons
     #protip:
     In case you want to use sprites for icons (which I would suggest you do) have a look at
-    http://css-tricks.com/13224-pseudo-spriting/ to get an idea of how to implement 
+    http://css-tricks.com/13224-pseudo-spriting/ to get an idea of how to implement
     .context-menu-item.icon:before {}
  */
 .context-menu-item.icon { min-height: 18px; background-repeat: no-repeat; background-position: 4px 2px; }
@@ -905,7 +905,7 @@ progress[aria-valuenow]:before  {
 .context-menu-input > label > select {
     display: block;
     width: 100%;
-    
+
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
         -ms-box-sizing: border-box;
@@ -913,11 +913,11 @@ progress[aria-valuenow]:before  {
             box-sizing: border-box;
 			padding: 2px;
 		}
-		
+
 		ul.context-menu-list..context-menu-root {
 			padding: 10px;
 		}
-		
+
 		label:hover {
 	background-color: #c1c1c1;
 }
@@ -944,7 +944,7 @@ progress[aria-valuenow]:before  {
 #projectSelectorWindow {
 	display:none;
 	background: white;
-	padding: 20px; 	
+	padding: 20px;
 	border: 2px solid #ddd;
 	float: left;
 	font-size: 1.2em;
@@ -1075,8 +1075,8 @@ progress[aria-valuenow]:before  {
 
 #mask {
 	display: none;
-	background: #000; 
-	position: fixed; left: 0; top: 0; 
+	background: #000;
+	position: fixed; left: 0; top: 0;
 	z-index: 10;
 	width: 100%; height: 100%;
 	opacity: 0.6;
@@ -1086,7 +1086,7 @@ progress[aria-valuenow]:before  {
 #errorMessage {
 	display:none;
 	background: white;
-	padding: 20px; 	
+	padding: 20px;
 	border: 2px solid #ddd;
 	float: left;
 	font-size: 1.2em;
@@ -1112,5 +1112,5 @@ progress[aria-valuenow]:before  {
 
 #errorMessage > div > ul, #errorMessage > div > pre {
 	max-height: 150px;
-  	overflow-y: scroll; 
+  	overflow-y: scroll;
 }

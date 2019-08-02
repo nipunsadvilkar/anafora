@@ -47,7 +47,7 @@ def index(request, projectName="", corpusName="", taskName="", schema="", schema
 
 	if (schemaMode == "Adjudication"):
 		isAdjudication = True
-		
+
 	rawText = ""
 
 	if projectName == "":
@@ -64,8 +64,9 @@ def index(request, projectName="", corpusName="", taskName="", schema="", schema
 			fhd.close()
 		except:
 			return HttpResponseForbidden("raw text file open error: " + rawTextFile)
-			
+
 	account = request.META["REMOTE_USER"]
+    # account = 'guest'
 	ps = getProjectSetting()
 	schemaMap = ps.getSchemaMap()
 	if annotatorName == "":
@@ -73,11 +74,10 @@ def index(request, projectName="", corpusName="", taskName="", schema="", schema
 	else:
 		if ";" not in annotatorName:
 			isAdjudication = False
-	
 	js_schemaSpecific = {"Coreference": {"adjudication":["js/annotate/anaforaAdjudicationProjectCoreference.js"]}}
 	contextContent = {
 		'js': (js_lib + js_annotate) if settings.DEBUG else (js_lib + ["js/out.js"]) ,
-		'js_schemaSpecific': js_schemaSpecific, 
+		'js_schemaSpecific': js_schemaSpecific,
 		'css': css,
 		'title': taskName + ' - Anafora',
 		'rawText': rawText.replace("&", "&amp;").replace("<", "&lt;").replace("\r", "&#13;").replace("\n", "&#10;"),
@@ -120,12 +120,12 @@ def getAnnotator(request, projectName, corpusName, taskName, schemaName) :
 		return HttpResponse(json.dumps(annotatorName))
 
 	return HttpResponseForbidden("access not allowed")
-	
+
 def getAnaforaXMLFile(request, projectName, corpusName, taskName, schema, annotatorName = ""):
 	"""
 	Given projectName, corpusName, taskName and schema, return the XML data file content
 
-	the default of annotatorName is request.META["REMOTE_USER"]. If annotatorName is assigned, then return this specific annotator's file (annotator permission required) 
+	the default of annotatorName is request.META["REMOTE_USER"]. If annotatorName is assigned, then return this specific annotator's file (annotator permission required)
 	"""
 
 	if request.method != "GET":
@@ -188,16 +188,16 @@ def getSchema(request, schema, schemaIdx=-1 ):
 		fhd.close()
 	except Exception as inst:
 		return HttpResponseNotFound(inst)
-		
+
 
 	rJSON = {"moreSchema": moreSchema, "schemaXML": schemaXML}
-	
+
 	return HttpResponse(json.dumps(rJSON))
 
 def getProject(request):
 	if request.method != "GET":
 		return HttpResponseForbidden()
-	
+
 	return HttpResponse(json.dumps(AnaforaProjectManager.getProject()))
 
 def getCorpusFromProjectName(request, projectName):
@@ -208,7 +208,7 @@ def getCorpusFromProjectName(request, projectName):
 		corpusName = AnaforaProjectManager.getCorpusFromProject(projectName)
 	except:
 		return HttpResponseNotFound("corpus not found")
-	
+
 	return HttpResponse(json.dumps(corpusName))
 
 def getAllTask(request, projectName, corpusName, schemaName):
@@ -232,7 +232,7 @@ def getAdjudicationTaskFromProjectCorpusName(request, projectName, corpusName, s
 
 	if isSchemaExist(schemaName) != True:
 		return HttpResponseNotFound("schema file not found")
-	
+
 	if isAdjudicator(request):
 		taskName = AnaforaProjectManager.searchAvailableAdjudicationTask(projectName, corpusName, schemaName, request.META["REMOTE_USER"])
 		return HttpResponse(json.dumps(taskName))
@@ -264,8 +264,8 @@ def writeFile(request, projectName, corpusName, taskName, schemaName):
 
 	if os.path.exists(filePath) != True:
 		return HttpResponseNotFound("project, corpus or task not found")
-		
-	
+
+
 	fileContent = request.REQUEST["fileContent"]
 	fileName = filePath + "/" + taskName + "." + schemaName + "." + (request.META["REMOTE_USER"])
 	if os.path.exists(fileName + ".completed.xml"):
@@ -289,7 +289,7 @@ def writeFile(request, projectName, corpusName, taskName, schemaName):
 				subprocess.call(["cp", fileNameGold, fileNamePreannotation])
 
 	return HttpResponse()
-	
+
 def setCompleted(request, projectName, corpusName, taskName, schemaName):
 	if request.method != "POST":
 		return HttpResponseForbidden()
@@ -303,7 +303,7 @@ def setCompleted(request, projectName, corpusName, taskName, schemaName):
 
 	if os.path.exists(filePath) != True:
 		return HttpResponseNotFound("project, corpus or task not found")
-		
+
 	fileName = filePath + "/" +  taskName + "." + schemaName + "." + (request.META["REMOTE_USER"])
 
 	ps = getProjectSetting()
@@ -358,5 +358,5 @@ def getProjectSetting():
 		projectSetting = ProjectSetting()
 		projectSetting.parseFromFile(os.path.join(settings.ANAFORA_PROJECT_FILE_ROOT, settings.ANAFORA_PROJECT_SETTING_FILENAME))
 		cache.set('anafora_project_setting', projectSetting)
-	
+
 	return projectSetting

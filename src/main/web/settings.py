@@ -5,7 +5,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('himanshu', 'nipun.sadvilkar@episource.com')
+    ('nipunsadvilkar', 'nipun.sadvilkar@episource.com')
     # ('Your Name', 'your_email@example.com'),
 )
 
@@ -77,10 +77,10 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/himanshu/Downloads/anafora/src/main/static',
-    '/home/himanshu/Downloads/anafora/src/main/static/css',
-    '/home/himanshu/Downloads/anafora/src/main/static/js',
-    '/home/himanshu/Downloads/anafora/src/main/static/image',
+    '/Users/nipunsadvilkar/projects/Personal/anafora/src/main/static',
+    '/Users/nipunsadvilkar/projects/Personal/anafora/src/main/static/css',
+    '/Users/nipunsadvilkar/projects/Personal/anafora/src/main/static/js',
+    '/Users/nipunsadvilkar/projects/Personal/anafora/src/main/static/image',
 
     )
 #    /data/home/verbs/student/wech5560/Research/anaforaDevelop/src/main/static',
@@ -98,7 +98,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'qjorhqwthwutetowtoht3tongtuit'
+SECRET_KEY = 'qjorhqwthwutetowtoht3tongtuitckdsngnrkg'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -130,8 +130,8 @@ ROOT_URLCONF = 'web.urls'
 WSGI_APPLICATION = 'web.wsgi.application'
 
 TEMPLATE_DIRS = (
-    "/home/himanshu/Downloads/anafora/src/main/static",
-    "/home/himanshu/Downloads/anafora/src/Templates",
+    "/Users/nipunsadvilkar/projects/Personal/anafora/src/main/static",
+    "/Users/nipunsadvilkar/projects/Personal/anafora/src/Templates",
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -186,15 +186,15 @@ TEST_RUNNER = 'testing.DatabaselessTestRunner'
 
 # Assign the anafora project file directory path
 # e.g.  ANAFORA_PROJECT_FILE_ROOT = "/data/home/verbs/student/wech5560/Research/KnowtatorProcessing/data/anaforaProjectFile/"
-ANAFORA_PROJECT_FILE_ROOT = "/home/himanshu/Downloads/anafora/sample data/jsm/"
+ANAFORA_PROJECT_FILE_ROOT = "/Users/nipunsadvilkar/projects/Personal/anafora/sample data/sample_project_dir/"
 
 # Assign the Digest auth group file location
 # e.g.  GROUP_FILE = '/data/anafora-event/site/anafora-event.group'
-GROUP_FILE = 'himanshu'
+GROUP_FILE = 'nipunsadvilkar'
 
 # Assign the group name for the admin
 # e.g.  ADMIN_GROUPNAME = 'anaforaadmin'
-ADMIN_GROUPNAME = 'himanshu'
+ADMIN_GROUPNAME = 'staff'
 
 # Assign the setting file in the project directory
 # e.g. ANAFORA_PROJECT_SETTING_FILENAME = ".setting.xml"
